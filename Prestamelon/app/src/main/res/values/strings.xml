@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Prestamelon</string>
+
+    <string name="fragment_saludo">
+        ¡Hola! Bienvenid@ a Prestamelón, nuestra comunidad de préstamos de bienes entre usuarios.\n\nPara comenzar tu experiencia ofertando y demandando préstamos, primero deberás registrarte.
+    </string>
+    <string name="fragment_vincular_google">
+        Dale al botón para vincular una cuenta de Google a tu perfil de Prestamelón:
+    </string>
+    <string name="fragment_registro_escaner_dni">Escanea</string>
+
+    <string name="activity_permissions_request_28">
+¡Hola! Necesitarás aceptar estos permisos para utilizar Prestamelón.\n\nLa cámara de tu móvil es esencial para relacionarte en Prestamelón, servirá en el proceso de préstamos de bienes.\n\nEstas fotos que saques en la aplicación se almacenarán en la memoria interna para mantener toda su calidad.
+    </string>
+    <string name="activity_permissions_request_29">
+<br>¡Hola! Antes de entrar necesitarás aceptar un permiso para utilizar una función de tu móvil.</br><br/><br>La cámara de tu móvil es esencial para relacionarte en Prestamelón, sólo la utilizaremos en momentos concretos del proceso de préstamos de bienes.</br>
+    </string>
+</resources>
