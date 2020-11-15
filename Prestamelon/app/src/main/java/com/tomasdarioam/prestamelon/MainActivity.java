@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
     private void login() {
-        Toast.makeText(this, "BIEN", Toast.LENGTH_LONG).show();
+        startActivity(new Intent(MainActivity.this, FirebaseTest.class));
     }
 
     private void register() {

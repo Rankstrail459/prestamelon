@@ -76,6 +76,7 @@ public class RegistryActivity extends AppCompatActivity
                             FirebaseFirestore firestore = FirebaseFirestore.getInstance();
                             firestore.collection("users").document(newUserUid).set(mNewUser.getPrestamelonUser());
 
+
                             FirebaseStorage storage = FirebaseStorage.getInstance();
                             String profilePhotoPath = String.format("profilePhotos/%s.jpg", newUserUid);
                             StorageReference profilePhotoRef = storage.getReference(profilePhotoPath);
