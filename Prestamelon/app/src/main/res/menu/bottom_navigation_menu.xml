@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_item_my_loans"
+        android:enabled="true"
+        android:icon="@mipmap/ic_my_loans"
+        android:title="Préstamos" />
+
+    <item
+        android:id="@+id/item_new_post"
+        android:enabled="true"
+        android:icon="@mipmap/ic_new_offer_post"
+        android:title="Publicar" />
+
+    <item
+        android:id="@+id/menu_item_offer_catalogue"
+        android:enabled="true"
+        android:icon="@mipmap/ic_offer_catalogue"
+        android:title="Catálogo" />
+
+    <item
+        android:id="@+id/menu_item_my_profile"
+        android:enabled="true"
+        android:icon="@mipmap/ic_my_profile"
+        android:title="Mi perfil" />
+    <item
+        android:id="@+id/menu_item_settings"
+        android:enabled="true"
+        android:icon="@mipmap/ic_settings"
+        android:title="Ajustes" />
+</menu>

@@ -62,7 +62,8 @@ public class MainActivity extends AppCompatActivity{
             if(ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
                 havePermissions = false;
 
-                Intent intent = new Intent(MainActivity.this, RequestPermissionsActivity.class);
+                //Intent intent = new Intent(MainActivity.this, RequestPermissionsActivity.class);
+                Intent intent = new Intent(MainActivity.this, OfferCatalogueActivity.class);
 
                 startActivityForResult(intent, REQUEST_CODE_PERMISSIONS);
             }

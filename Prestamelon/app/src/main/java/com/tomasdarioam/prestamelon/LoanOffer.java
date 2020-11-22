@@ -1,36 +1,40 @@
 package com.tomasdarioam.prestamelon;
 
 import com.google.firebase.Timestamp;
+import com.google.firebase.firestore.Exclude;
 
+import java.lang.annotation.Annotation;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class LoanOffer {
-    public String DocumentUid;
-
-    private String mUserUid;
-    private String mItemName;
+public class LoanOffer implements Exclude {
 
     //private DateTimeRange[] mDeliveryAvailabilityDateTimeRanges;
+    private Item mLoanItem;
     private List<DateTimeRange> mDeliveryAvailabilityDateTimeRanges;
     private List<Comment> mComments;
+    private String mDocumentUid;
 
     public LoanOffer() {
 
     }
 
-    public LoanOffer(String itemName, List<DateTimeRange> deliveryAvailabilityDateTimeRanges) {
-        setItemName(itemName);
+    public LoanOffer(Item loanItem, List<DateTimeRange> deliveryAvailabilityDateTimeRanges) {
+        setLoanItem(loanItem);
         setDeliveryAvailabilityDateTimeRanges(deliveryAvailabilityDateTimeRanges);
     }
 
-    public String getItemName() {
-        return mItemName;
+    public Item getLoanItem() {
+        return mLoanItem;
     }
 
-    public void setItemName(String mItemName) {
-        this.mItemName = mItemName;
+    public void setLoanItem(Item loanItem) {
+        mLoanItem = loanItem;
+    }
+
+    public void addLoanItemRating(int rating) {
+        mLoanItem.addRating(rating);
     }
 
     public List<DateTimeRange> getDeliveryAvailabilityDateTimeRanges() {
@@ -38,7 +42,7 @@ public class LoanOffer {
     }
 
     public void setDeliveryAvailabilityDateTimeRanges(List<DateTimeRange> deliveryAvailabilityDateTimeRanges) {
-        this.mDeliveryAvailabilityDateTimeRanges = deliveryAvailabilityDateTimeRanges;
+        mDeliveryAvailabilityDateTimeRanges = deliveryAvailabilityDateTimeRanges;
     }
 
     public List<Comment> getComments() {
@@ -48,6 +52,22 @@ public class LoanOffer {
     public void setComments(List<Comment> comments) {
         mComments = comments;
     }
+
+    @Exclude
+    public String getDocumentUid() {
+        return mDocumentUid;
+    }
+
+    @Exclude
+    public void setDocumentUid(String documentUid) {
+        mDocumentUid = documentUid;
+    }
+
+    @Override
+    public Class<? extends Annotation> annotationType() {
+        return null;
+    }
+
 
     /*
     public Map<String, Object> getStartDateTime() {

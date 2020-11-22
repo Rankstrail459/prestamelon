@@ -22,9 +22,6 @@
         <item name="android:elevation">4dp</item>
     </style>
 
-    <style name="test" >
-    </style>
-
     <style name="GreenButton" parent="Widget.MaterialComponents.Button">
         <item name="android:textColor">@color/text_color</item>
         <item name="android:textAppearance">@style/TextAppearance.MdcTypographyStyles.Button</item>
@@ -63,6 +60,17 @@
         <item name="android:background">@drawable/registro_mensaje_background</item>
         <item name="android:padding">32dp</item>
         <item name="elevation">8dp</item>
+    </style>
+
+    <style name="BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomNavigationView</item>
+    </style>
+
+    <style name="ThemeOverlay.App.BottomNavigationView" parent="">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorOnPrimary">@color/primaryTextColor</item>
+        <item name="android:labelTextSize">80sp</item>
+        <item name="android:textSize">80sp</item>
     </style>
 
     <style name="TextAppearance.MdcTypographyStyles.Headline1" parent="TextAppearance.MaterialComponents.Headline1">

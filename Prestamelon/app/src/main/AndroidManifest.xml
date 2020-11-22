@@ -17,7 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FirebaseTest"></activity>
+        <activity android:name=".OfferCatalogueActivity" />
+        <activity android:name=".MyLoansActivity" />
+        <activity android:name=".FirebaseTest" />
         <activity android:name=".RequestPermissionsActivity" />
         <activity
             android:name=".RegistryActivity"

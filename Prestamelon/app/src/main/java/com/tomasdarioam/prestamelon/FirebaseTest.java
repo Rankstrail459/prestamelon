@@ -12,8 +12,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.type.DateTime;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class FirebaseTest extends AppCompatActivity {
@@ -44,13 +47,51 @@ public class FirebaseTest extends AppCompatActivity {
 
         //getPreferences(MODE_PRIVATE).edit().remove("tEGwsuLl9Z9FqtEdLR2R").apply();
 
-        List<LoanOffer> loanOffers = new ArrayList<LoanOffer>();
 
-        LoanOffer newLoanOffer = new LoanOffer();
+        CarFeatures carFeatures = new CarFeatures(Features.Grades.HIGH, Features.CarTypes.SPORTS);
+
+        Item loanItem = new Item("Cochazo", "kek", "Buen coche", carFeatures, new CarSubcategory());
+
+        loanItem.addRating(1);
+        loanItem.addRating(5);
+
+        List<DateTimeRange> availability = new ArrayList<>();
+
+        availability.add(new DateTimeRange(
+                DateUtils.create(2021, 0, 1, 0, 0),
+                DateUtils.create(2021, 0, 1, 1, 0)
+        ));
+
+        availability.add(new DateTimeRange(
+                DateUtils.create(2022, 1, 1, 0, 0),
+                DateUtils.create(2022, 1, 1, 1, 0)
+        ));
+
+        LoanOffer loanOffer = new LoanOffer(loanItem, availability);
+
+        List<Comment> comments = new ArrayList<>();
+
+        Comment comment = new Comment("lol", "Vaya mierda de buga, man");
+        comment.addCommentReply(new BaseComment("kek", "Mierda tu"));
+        comment.addCommentReply(new BaseComment("lol", "xdddddddddd"));
+        comments.add(comment);
+
+        loanOffer.setComments(comments);
 
         db = FirebaseFirestore.getInstance();
 
-        db.collection("loanOffers").document().set()
+        db.collection("loanOffers").document().set(loanOffer);
+        /*
+        LoanOffer newLoanOffer = new LoanOffer("cabritillo", availability);
+
+        List<Comment> comments = new ArrayList<>();
+
+        comments.add(new Comment("123", "Buenas", DateUtils.create(2021, 1, 1, 0, 0)));
+        comments.add(new Comment("123", "Adiós", DateUtils.create(2021, 1, 1, 1, 0)));
+
+        newLoanOffer.setComments(comments);
+
+
 
         db.collection("loanOffers").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                 @Override
@@ -71,7 +112,8 @@ public class FirebaseTest extends AppCompatActivity {
                         Log.d("FIRESTORE", "Error getting documents: ", task.getException());
                     }
                 }
-                });
+        });
+        */
     }
 
     private void getLoanOffers() {
@@ -83,11 +125,13 @@ public class FirebaseTest extends AppCompatActivity {
 
         List<LoanOffer> loanOffers2 = SharedPreferencesUtils.LoanOffers.getLoanOffers(this);
 
-        if(loanOffers2 != null) {
-            for (LoanOffer loanOffer : loanOffers2) {
+        /*
+        if(loanOffers != null) {
+            for (LoanOffer loanOffer : loanOffers) {
                 Log.d("FIRESTORE", loanOffer.DocumentUid);
             }
         }
+         */
     }
 
 

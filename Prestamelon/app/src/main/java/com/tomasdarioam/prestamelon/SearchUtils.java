@@ -14,7 +14,7 @@ public class SearchUtils {
 
     public static class LoanOffers {
         public static LoanOffer findByItemName(Collection<LoanOffer> loanOffers, String itemName) {
-            return findFirstByProperty(loanOffers, loanOffer -> itemName.equals(loanOffer.getItemName()));
+            return findFirstByProperty(loanOffers, loanOffer -> itemName.equals(loanOffer.getLoanItem().getItemName()));
         }
     }
 }

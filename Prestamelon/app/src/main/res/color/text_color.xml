@@ -4,4 +4,3 @@
     <item android:state_enabled="false" android:color="@color/primaryTextColorInactive" />
     <item android:color="@color/primaryTextColor"/>
 </selector>
-

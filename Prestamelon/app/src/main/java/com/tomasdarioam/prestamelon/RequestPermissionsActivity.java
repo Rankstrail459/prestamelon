@@ -26,11 +26,11 @@ public class RequestPermissionsActivity extends AppCompatActivity {
         getWindow().setStatusBarColor(getResources().getColor(R.color.secondaryDarkColor));
         setContentView(R.layout.activity_permissions_request);
 
-        final TextView textMessage = findViewById(R.id.text_message);
+        final TextView textMessage = findViewById(R.id.text_view_message);
 
         final boolean[] firstRequest = {true};
 
-        MaterialButton mButtonRequestPermissions = findViewById(R.id.btn_request_permissions);
+        MaterialButton mButtonRequestPermissions = findViewById(R.id.button_request_permissions);
         mButtonRequestPermissions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
