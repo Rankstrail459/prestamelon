@@ -8,14 +8,14 @@
         <item name="android:textColorPrimary">@color/primaryTextColor</item>
         <item name="android:textColor">@color/primaryTextColor</item>
         <!--
-        <item name="android:textViewStyle">@style/TextAppearance.MdcTypographyStyles.Body1</item>
+        <item name="android:textViewStyle">@style/TextAppearance.Body1</item>
         -->
-        <item name="android:textAppearance">@style/TextAppearance.MdcTypographyStyles.Body1</item>
-        <item name="textAppearanceBody1">@style/TextAppearance.MdcTypographyStyles.Body1</item>
-        <item name="textAppearanceBody2">@style/TextAppearance.MdcTypographyStyles.Body2</item>
-        <item name="textAppearanceCaption">@style/TextAppearance.MdcTypographyStyles.Caption</item>
-        <item name="textAppearanceListItem">@style/TextAppearance.MdcTypographyStyles.Body1</item>
-        <item name="textAppearanceButton">@style/TextAppearance.MdcTypographyStyles.Button</item>
+        <item name="android:textAppearance">@style/TextAppearance.Body1</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Caption</item>
+        <item name="textAppearanceListItem">@style/TextAppearance.Body1</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Button</item>
         <item name="android:windowBackground">@color/primaryLightColor</item>
         <item name="materialButtonStyle">@style/GreenButton</item>
         <item name="elevation">4dp</item>
@@ -24,7 +24,7 @@
 
     <style name="GreenButton" parent="Widget.MaterialComponents.Button">
         <item name="android:textColor">@color/text_color</item>
-        <item name="android:textAppearance">@style/TextAppearance.MdcTypographyStyles.Button</item>
+        <item name="android:textAppearance">@style/TextAppearance.Button</item>
         <item name="backgroundTint">@color/green_button_color</item>
         <item name="cornerRadius">64dp</item>
         <item name="android:padding">16dp</item>
@@ -32,18 +32,26 @@
 
     <style name="OrangeButton" parent="Widget.MaterialComponents.Button">
         <item name="android:textColor">@color/secondaryTextColor</item>
-        <item name="android:textAppearance">@style/TextAppearance.MdcTypographyStyles.Button</item>
+        <item name="android:textAppearance">@style/TextAppearance.Button</item>
         <item name="backgroundTint">@color/secondaryDarkColor</item>
         <item name="cornerRadius">64dp</item>
         <item name="android:padding">16dp</item>
     </style>
 
     <style name="OrangeCardView" parent="Widget.MaterialComponents.CardView">
-        <item name="cardElevation">4dp</item>
+        <item name="cardElevation">8dp</item>
         <item name="cardBackgroundColor">@color/secondaryLightColor</item>
         <item name="strokeColor">@color/secondaryColor</item>
         <item name="strokeWidth">8dp</item>
         <item name="cardCornerRadius">160dp</item>
+    </style>
+
+    <style name="GreenCardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">8dp</item>
+        <item name="cardBackgroundColor">@color/primaryColor</item>
+        <item name="strokeColor">@color/primaryDarkColor</item>
+        <item name="strokeWidth">4dp</item>
+        <item name="cardCornerRadius">80dp</item>
     </style>
 
     <style name="MensajeRegistro">
@@ -53,7 +61,7 @@
         <item name="android:lineSpacingExtra">8sp</item>
         <item name="android:padding">24dp</item>
         <item name="elevation">8dp</item>
-        <item name="android:textAppearance">@style/TextAppearance.MdcTypographyStyles.Body1</item>
+        <item name="android:textAppearance">@style/TextAppearance.Body1</item>
     </style>
 
     <style name="OrangePanel">
@@ -73,69 +81,69 @@
         <item name="android:textSize">80sp</item>
     </style>
 
-    <style name="TextAppearance.MdcTypographyStyles.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
-        <item name="fontFamily">@font/pacifico</item>
-        <item name="android:fontFamily">@font/pacifico</item>
-        <item name="android:textSize">108sp</item>
-    </style>
-    <style name="TextAppearance.MdcTypographyStyles.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+    <style name="TextAppearance.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
         <item name="fontFamily">@font/pacifico</item>
         <item name="android:fontFamily">@font/pacifico</item>
         <item name="android:textSize">68sp</item>
     </style>
-    <style name="TextAppearance.MdcTypographyStyles.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+    <style name="TextAppearance.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/pacifico</item>
+        <item name="android:fontFamily">@font/pacifico</item>
+        <item name="android:textSize">68sp</item>
+    </style>
+    <style name="TextAppearance.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
         <item name="fontFamily">@font/pacifico</item>
         <item name="android:fontFamily">@font/pacifico</item>
         <item name="android:textSize">54sp</item>
     </style>
-    <style name="TextAppearance.MdcTypographyStyles.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+    <style name="TextAppearance.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
         <item name="fontFamily">@font/pacifico</item>
         <item name="android:fontFamily">@font/pacifico</item>
         <item name="android:textSize">38sp</item>
     </style>
-    <style name="TextAppearance.MdcTypographyStyles.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+    <style name="TextAppearance.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
         <item name="fontFamily">@font/pacifico</item>
         <item name="android:fontFamily">@font/pacifico</item>
+        <item name="android:textSize">36sp</item>
+    </style>
+    <style name="TextAppearance.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/nunito_black</item>
         <item name="android:textSize">27sp</item>
     </style>
-    <style name="TextAppearance.MdcTypographyStyles.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
-        <item name="fontFamily">@font/pacifico</item><item name="android:fontFamily">@font/pacifico</item>
-        <item name="android:textSize">23sp</item>
-    </style>
-    <style name="TextAppearance.MdcTypographyStyles.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
-        <item name="fontFamily">@font/pacifico</item>
-        <item name="android:fontFamily">@font/pacifico</item>
+    <style name="TextAppearance.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/nunito_black</item>
+        <item name="android:fontFamily">@font/nunito_black</item>
         <item name="android:textSize">18sp</item>
     </style>
-    <style name="TextAppearance.MdcTypographyStyles.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
-        <item name="fontFamily">@font/pacifico</item>
-        <item name="android:fontFamily">@font/pacifico</item>
+    <style name="TextAppearance.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/nunito_black</item>
+        <item name="android:fontFamily">@font/nunito_black</item>
         <item name="android:textSize">16sp</item>
     </style>
-    <style name="TextAppearance.MdcTypographyStyles.Body1" parent="TextAppearance.MaterialComponents.Body1">
+    <style name="TextAppearance.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/nunito_black</item>
+        <item name="android:fontFamily">@font/nunito_black</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="TextAppearance.Body2" parent="TextAppearance.MaterialComponents.Body2">
         <item name="fontFamily">@font/nunito_black</item>
         <item name="android:fontFamily">@font/nunito_black</item>
         <item name="android:textSize">17sp</item>
     </style>
-    <style name="TextAppearance.MdcTypographyStyles.Body2" parent="TextAppearance.MaterialComponents.Body2">
-        <item name="fontFamily">@font/nunito_black</item>
-        <item name="android:fontFamily">@font/nunito_black</item>
-        <item name="android:textSize">13sp</item>
-    </style>
-    <style name="TextAppearance.MdcTypographyStyles.Button" parent="TextAppearance.MaterialComponents.Button">
+    <style name="TextAppearance.Button" parent="TextAppearance.MaterialComponents.Button">
         <item name="fontFamily">@font/nunito_black</item>
         <item name="android:fontFamily">@font/nunito_black</item>
         <item name="android:textSize">15sp</item>
     </style>
-    <style name="TextAppearance.MdcTypographyStyles.Caption" parent="TextAppearance.MaterialComponents.Caption">
+    <style name="TextAppearance.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/nunito_black</item>
+        <item name="android:fontFamily">@font/nunito_black</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+    <style name="TextAppearance.Overline" parent="TextAppearance.MaterialComponents.Overline">
         <item name="fontFamily">@font/nunito_black</item>
         <item name="android:fontFamily">@font/nunito_black</item>
         <item name="android:textSize">13sp</item>
-    </style>
-    <style name="TextAppearance.MdcTypographyStyles.Overline" parent="TextAppearance.MaterialComponents.Overline">
-        <item name="fontFamily">@font/nunito_black</item>
-        <item name="android:fontFamily">@font/nunito_black</item>
-        <item name="android:textSize">11sp</item>
     </style>
 
 

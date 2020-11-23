@@ -2,20 +2,13 @@ package com.tomasdarioam.prestamelon;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Toast;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -63,7 +56,7 @@ public class MainActivity extends AppCompatActivity{
                 havePermissions = false;
 
                 //Intent intent = new Intent(MainActivity.this, RequestPermissionsActivity.class);
-                Intent intent = new Intent(MainActivity.this, OfferCatalogueActivity.class);
+                Intent intent = new Intent(MainActivity.this, HubOfferCatalogueActivity.class);
 
                 startActivityForResult(intent, REQUEST_CODE_PERMISSIONS);
             }

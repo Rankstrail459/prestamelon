@@ -15,4 +15,6 @@
     <string name="activity_permissions_request_29">
 <br>¡Hola! Antes de entrar necesitarás aceptar un permiso para utilizar una función de tu móvil.</br><br /><br>La cámara de tu móvil es esencial para relacionarte en Prestamelón, sólo la utilizaremos en momentos concretos del proceso de préstamos de bienes.</br>
     </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

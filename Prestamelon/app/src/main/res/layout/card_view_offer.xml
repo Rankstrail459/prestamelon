@@ -3,11 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <!--
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/GreenCardView"
         android:layout_margin="8dp">
 
         <LinearLayout
@@ -16,42 +16,55 @@
             android:orientation="vertical">
 
             <ImageView
-                app:srcCompat="@drawable/media"
+                android:id="@+id/image_view_primary_"
                 android:layout_width="match_parent"
                 android:layout_height="194dp"
-                android:contentDescription="@string/content_description_media"
-                android:scaleType="centerCrop" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:scaleType="fitCenter"
+                android:src="@mipmap/ic_camera" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/offer_catalogue"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/title"
-                    android:textAppearance="?attr/textAppearanceHeadline6" />
+                    android:gravity="center_horizontal"
+                    android:text="PRUEBA DE texto largo"
+                    android:textAppearance="@style/TextAppearance.Headline6" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/secondary_text"
-                    android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="?android:attr/textColorSecondary" />
+                    android:orientation="horizontal"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/supporting_text"
-                    android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="?android:attr/textColorSecondary" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="top"
+                        android:text="Disponible en 2 días"
+                        android:textAppearance="@style/TextAppearance.Body2" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|right"
+                        android:paddingBottom="16dp"
+                        android:paddingLeft="64dp"
+                        android:text="3500"
+                        android:textAppearance="@style/TextAppearance.Headline5" />
 
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/ic_seed_50"
+                        android:tint="@color/primaryTextColor"
+                        android:scaleType="fitXY"/>
+                </LinearLayout>
+
+
+            <!--
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -59,21 +72,21 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.button.MaterialButton
-                    style="?attr/borderlessButtonStyle"
+                    style="@style/GreenButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
-                    android:text="@string/action_1" />
+                    android:text="PRUEBA de texto" />
 
                 <com.google.android.material.button.MaterialButton
-                    style="?attr/borderlessButtonStyle"
+                    style="@style/GreenButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/action_2" />
+                    android:text="PRUEBA de texto" />
             </LinearLayout>
+            -->
 
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
-    -->
 </FrameLayout>
