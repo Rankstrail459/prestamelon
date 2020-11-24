@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".HubCategoriesFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_games_category"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-8dp"
+            android:layout_marginBottom="-8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/gamesCategoryColor"
+            android:text="Juegos"
+            app:cornerRadius="0dp"
+            app:icon="@mipmap/ic_games" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_supplies_and_tools_category"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-8dp"
+            android:layout_marginBottom="-8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/suppliesAndToolsCategoryColor"
+            android:text="Útiles y heramientas"
+            android:textSize="14sp"
+            app:cornerRadius="0dp"
+            app:icon="@mipmap/ic_supplies_and_tools" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_reading_category"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-8dp"
+            android:layout_marginBottom="-8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/readingCategoryColor"
+            android:text="Lecturas"
+            app:cornerRadius="0dp"
+            app:icon="@mipmap/ic_reading" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_spaces_category"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-8dp"
+            android:layout_marginBottom="-8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/spacesCategoryColor"
+            android:text="Espacios"
+            app:cornerRadius="0dp"
+            app:icon="@mipmap/ic_spaces" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_vehicles_category"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginTop="-8dp"
+            android:layout_marginBottom="-8dp"
+            app:cornerRadius="0dp"
+            app:icon="@mipmap/ic_vehicles"
+            android:backgroundTint="@color/vehiclesCategoryColor"
+            android:text="Vehículos" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_clothing_and_accessory_category"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-8dp"
+            android:layout_marginBottom="-8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/clothingAndAccessoryCategoryColor"
+            android:text="Ropa y complementos"
+            android:textSize="12sp"
+            app:cornerRadius="0dp"
+            app:icon="@mipmap/ic_clothing_and_accessory" />
+
+    </LinearLayout>
+</LinearLayout>

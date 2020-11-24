@@ -27,7 +27,7 @@
             android:focusable="false"
             android:inputType="textMultiLine|textPhonetic"
             android:text="Elige un nombre de perfil"
-            android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1" />
+            android:textAppearance="@style/TextAppearance.Body1" />
 
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

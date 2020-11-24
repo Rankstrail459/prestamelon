@@ -14,5 +14,5 @@
         android:padding="10dp"
         android:singleLine="true"
         android:text="PRUEBA"
-        android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Caption" />
+        android:textAppearance="@style/TextAppearance.Body1" />
 </FrameLayout>

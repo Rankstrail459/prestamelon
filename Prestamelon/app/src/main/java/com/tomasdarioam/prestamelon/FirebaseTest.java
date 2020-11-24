@@ -47,7 +47,7 @@ public class FirebaseTest extends AppCompatActivity {
 
         //getPreferences(MODE_PRIVATE).edit().remove("tEGwsuLl9Z9FqtEdLR2R").apply();
 
-
+        /*
         CarFeatures carFeatures = new CarFeatures(Features.Grades.HIGH, Features.CarTypes.SPORTS);
 
         Item loanItem = new Item("Cochazo", "kek", "Buen coche", carFeatures, new CarSubcategory());

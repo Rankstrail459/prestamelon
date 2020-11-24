@@ -44,7 +44,7 @@ public class RegistryActivity extends AppCompatActivity
 
     private NewUser mNewUser;
 
-    private final RegistryConfirmationFragment.ConfirmationRequestCodes mConfirmationFragment =
+    private RegistryConfirmationFragment.ConfirmationRequestCodes mRequestCodeConfirmation =
             RegistryConfirmationFragment.ConfirmationRequestCodes.RC_REGISTRY_CONFIRMATION;
 
     private void nextFragment() {
@@ -121,33 +121,52 @@ public class RegistryActivity extends AppCompatActivity
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
 
             bytes = stream.toByteArray();
-
-            //Recomendado para la optimización
-            /*
-            stream.close();
-            bitmap.recycle();
-             */
         } catch(Exception exception) { }
 
         return bytes;
     }
 
-    public void changeToConfirmChangesButton() {
+    public void changeToConfirmButton() {
         mButtonNext.setText("Confirmar");
 
         mButtonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mButtonNext.setEnabled(false);
-                switch(mConfirmationFragment) {
+                switch(mRequestCodeConfirmation) {
                     case RC_RETURN_REGISTRY_CONFIRMATION:
                         changeFragment(new RegistryConfirmationFragment(mFragmentIndex++));
+                        break;
                     case RC_REGISTRY_CONFIRMATION:
                         firebaseAuthWithGoogle();
                         break;
                 }
             }
         });
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        //overridePendingTransition(0, 0);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_registry);
+        mFragmentManager = getSupportFragmentManager();
+
+        mRegisterFragmentsList = createRegistryFragmentsList();
+
+        mButtonNext = findViewById(R.id.btnSiguiente);
+        mButtonNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mButtonNext.setEnabled(false);
+                if(mRegisterFragmentsList.size()-1 != mFragmentCounter)
+                    nextFragment();
+            }
+        });
+
+        nextFragment();
+
+        mNewUser = new NewUser();
     }
 
     @Override
@@ -180,36 +199,25 @@ public class RegistryActivity extends AppCompatActivity
         mButtonNext.setEnabled(true);
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        //overridePendingTransition(0, 0);
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registry);
-        mFragmentManager = getSupportFragmentManager();
 
-        mRegisterFragmentsList = createRegistryFragmentsList();
-
-        mButtonNext = findViewById(R.id.btnSiguiente);
-        mButtonNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mButtonNext.setEnabled(false);
-                if(mRegisterFragmentsList.size()-1 != mFragmentCounter)
-                    nextFragment();
-            }
-        });
-
-        nextFragment();
-
-        mNewUser = new NewUser();
-    }
 
     @Override
     public void confirmation(RegistryConfirmationFragment.ConfirmationRequestCodes requestCode) {
-        if(requestCode == RegistryConfirmationFragment.ConfirmationRequestCodes.RC_EDIT_PROFILE_PHOTO)
+        boolean returnConfirmationFragment = false;
+
+        if(requestCode == RegistryConfirmationFragment.ConfirmationRequestCodes.RC_EDIT_PROFILE_PHOTO) {
             changeFragment(new RegistryTakeProfilePhotoFragment(mFragmentIndex++));
-        else if(requestCode == RegistryConfirmationFragment.ConfirmationRequestCodes.RC_EDIT_PROFILE_NAME)
+            returnConfirmationFragment = true;
+        }
+        else if(requestCode == RegistryConfirmationFragment.ConfirmationRequestCodes.RC_EDIT_PROFILE_NAME) {
             changeFragment(new RegistryChooseProfileNameFragment(mFragmentIndex++));
+            returnConfirmationFragment = true;
+        }
+
+        if(returnConfirmationFragment)
+            mRequestCodeConfirmation = RegistryConfirmationFragment.ConfirmationRequestCodes.RC_RETURN_REGISTRY_CONFIRMATION;
+        else
+            mRequestCodeConfirmation = RegistryConfirmationFragment.ConfirmationRequestCodes.RC_REGISTRY_CONFIRMATION;
     }
 
     @Override
@@ -261,7 +269,7 @@ public class RegistryActivity extends AppCompatActivity
 
             registryConfirmationFragment.setConfirmationListener(this);
 
-            changeToConfirmChangesButton();
+            changeToConfirmButton();
             mButtonNext.setEnabled(true);
 
         }

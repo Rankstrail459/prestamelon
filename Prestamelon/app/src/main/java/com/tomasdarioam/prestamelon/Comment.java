@@ -13,8 +13,8 @@ public class Comment extends BaseComment{
 
     }
 
-    public Comment(String userUid, String message) {
-        super(userUid, message);
+    public Comment(String userUid, String userName, String message) {
+        super(userUid, userName, message);
         /*
         setUserUid(userUid);
         setMessage(message);
@@ -38,6 +38,7 @@ public class Comment extends BaseComment{
 
 class BaseComment {
     private String mUserUid;
+    private String mUserName;
     private String mMessage;
     private Date mDateTime;
 
@@ -45,8 +46,9 @@ class BaseComment {
 
     }
 
-    public BaseComment(String userUid, String message) {
+    public BaseComment(String userUid, String userName, String message) {
         setUserUid(userUid);
+        setUserName(userName);
         setMessage(message);
         setDateTime(Calendar.getInstance().getTime());
     }
@@ -59,6 +61,14 @@ class BaseComment {
         mUserUid = userUid;
     }
 
+    public String getUserName() {
+        return mUserName;
+    }
+
+    public void setUserName(String userName) {
+        mUserName = userName;
+    }
+    
     public String getMessage() {
         return mMessage;
     }

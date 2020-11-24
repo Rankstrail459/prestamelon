@@ -3,6 +3,8 @@ package com.tomasdarioam.prestamelon;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -24,6 +26,8 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import static com.tomasdarioam.prestamelon.BitmapUtils.getBitmapFromPhotoPath;
 
 public class RegistryTakeProfilePhotoFragment extends Fragment {
 
@@ -80,7 +84,6 @@ public class RegistryTakeProfilePhotoFragment extends Fragment {
         );
 
 
-        // Save a file: path for use with ACTION_VIEW intents
         currentPhotoPath = image.getAbsolutePath();
         return image;
     }
@@ -114,41 +117,25 @@ public class RegistryTakeProfilePhotoFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == REQUEST_TAKE_PHOTO) {
-
             setPic();
         }
     }
 
     private void setPic() {
-        // Get the dimensions of the View
-        int targetW = imvPrevisualizacion.getWidth();
-        int targetH = imvPrevisualizacion.getHeight();
+        int targetWidth = imvPrevisualizacion.getWidth();
+        int targetHeight = imvPrevisualizacion.getHeight();
 
-        // Get the dimensions of the bitmap
-        BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-        bmOptions.inJustDecodeBounds = true;
+        Bitmap previewBitmap = BitmapUtils.getBitmapFromPhotoPath(currentPhotoPath, targetWidth, targetHeight);
 
-        BitmapFactory.decodeFile(currentPhotoPath, bmOptions);
-
-        int photoW = bmOptions.outWidth;
-        int photoH = bmOptions.outHeight;
-
-        // Determine how much to scale down the image
-        int scaleFactor = Math.max(1, Math.min(photoW/targetW, photoH/targetH));
-
-        // Decode the image file into a Bitmap sized to fill the View
-        bmOptions.inJustDecodeBounds = false;
-        bmOptions.inSampleSize = scaleFactor;
-        //bmOptions.inPurgeable = true;
-
-        Bitmap bitmap = BitmapFactory.decodeFile(currentPhotoPath, bmOptions);
-
-        if(bitmap == null) {
+        if(previewBitmap == null) {
             return;
         }
 
-        imvPrevisualizacion.setImageBitmap(bitmap);
-        nextFragment(bitmap);
+        imvPrevisualizacion.setImageBitmap(previewBitmap);
+
+        Bitmap fullBitmap = BitmapUtils.getBitmapFromPhotoPath(currentPhotoPath, 0, 0);
+
+        nextFragment(fullBitmap);
     }
 
     private void nextFragment(Bitmap profilePhoto) {

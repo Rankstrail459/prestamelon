@@ -6,7 +6,7 @@ import java.util.Map;
 public class Categories {
 
     public enum CategoriesIds {
-        VEHICLE, CLOTHING_OR_ACCESSORY
+        VEHICLE, CLOTHING_AND_ACCESSORY, READING, SUPPLIES_AND_TOOLS, SPACES, GAMES
     }
     
     static class Vehicles {

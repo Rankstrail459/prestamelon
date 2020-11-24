@@ -8,6 +8,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -51,22 +52,33 @@ public class MainActivity extends AppCompatActivity{
 
         boolean havePermissions = true;
 
+        //Intent intent = new Intent(MainActivity.this, HubActivity.class);
+
+        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NO_ANIMATION);
+
+        //startActivity(intent);
+
         for (String permission : permissions) {
             if(ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
                 havePermissions = false;
-
-                //Intent intent = new Intent(MainActivity.this, RequestPermissionsActivity.class);
-                Intent intent = new Intent(MainActivity.this, HubOfferCatalogueActivity.class);
-
-                startActivityForResult(intent, REQUEST_CODE_PERMISSIONS);
+                break;
             }
         }
 
         if(havePermissions) checkUser();
+        else {
+            Intent intent = new Intent(MainActivity.this, RequestPermissionsActivity.class);
+
+            startActivityForResult(intent, REQUEST_CODE_PERMISSIONS);
+        }
     }
 
     private void login() {
-        startActivity(new Intent(MainActivity.this, FirebaseTest.class));
+        Intent intent = new Intent(MainActivity.this, HubActivity.class);
+
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NO_ANIMATION);
+
+        startActivity(intent);
     }
 
     private void register() {

@@ -71,6 +71,8 @@ public class RegistryConfirmationFragment extends Fragment {
                 callback.confirmation(ConfirmationRequestCodes.RC_EDIT_PROFILE_NAME);
             }
         });
+
+        callback.confirmation(ConfirmationRequestCodes.RC_REGISTRY_CONFIRMATION);
     }
 
     private void placeNewUserEditableInformation() {
@@ -85,6 +87,7 @@ public class RegistryConfirmationFragment extends Fragment {
         byte[] byteArray = newUser.getByteArray("profilePhoto");
         Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
         imageProfilePhoto.setImageBitmap(bitmap);
+        imageProfilePhoto.setScaleType(ImageView.ScaleType.CENTER_CROP);
     }
 
     ConfirmationListener callback;

@@ -8,21 +8,21 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class LoanOffer implements Exclude {
+public class LoanOffer {// implements Exclude {
 
     //private DateTimeRange[] mDeliveryAvailabilityDateTimeRanges;
     private Item mLoanItem;
-    private List<DateTimeRange> mDeliveryAvailabilityDateTimeRanges;
+    private List<DateTimeRange> mAvailabilityDateTimeRanges;
     private List<Comment> mComments;
-    private String mDocumentUid;
+    //private String mDocumentUid;
 
     public LoanOffer() {
 
     }
 
-    public LoanOffer(Item loanItem, List<DateTimeRange> deliveryAvailabilityDateTimeRanges) {
+    public LoanOffer(Item loanItem, List<DateTimeRange> availabilityDateTimeRanges) {
         setLoanItem(loanItem);
-        setDeliveryAvailabilityDateTimeRanges(deliveryAvailabilityDateTimeRanges);
+        setAvailabilityDateTimeRanges(availabilityDateTimeRanges);
     }
 
     public Item getLoanItem() {
@@ -37,12 +37,12 @@ public class LoanOffer implements Exclude {
         mLoanItem.addRating(rating);
     }
 
-    public List<DateTimeRange> getDeliveryAvailabilityDateTimeRanges() {
-        return mDeliveryAvailabilityDateTimeRanges;
+    public List<DateTimeRange> getAvailabilityDateTimeRanges() {
+        return mAvailabilityDateTimeRanges;
     }
 
-    public void setDeliveryAvailabilityDateTimeRanges(List<DateTimeRange> deliveryAvailabilityDateTimeRanges) {
-        mDeliveryAvailabilityDateTimeRanges = deliveryAvailabilityDateTimeRanges;
+    public void setAvailabilityDateTimeRanges(List<DateTimeRange> AvailabilityDateTimeRanges) {
+        mAvailabilityDateTimeRanges = AvailabilityDateTimeRanges;
     }
 
     public List<Comment> getComments() {
@@ -53,6 +53,7 @@ public class LoanOffer implements Exclude {
         mComments = comments;
     }
 
+    /*
     @Exclude
     public String getDocumentUid() {
         return mDocumentUid;
@@ -67,6 +68,8 @@ public class LoanOffer implements Exclude {
     public Class<? extends Annotation> annotationType() {
         return null;
     }
+
+     */
 
 
     /*

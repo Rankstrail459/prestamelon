@@ -31,7 +31,7 @@ class DateTimeRange {
 
     }
 
-    public Timestamp getStartDate() {
+    public Timestamp getStartDateTime() {
         return new Timestamp(mStartDateTime);
     }
 
