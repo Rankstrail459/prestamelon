@@ -10,7 +10,8 @@
         android:id="@+id/frame_layout_items_photos"
         style="@style/OrangePanel"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="232dp"
+        android:padding="20dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
@@ -21,7 +22,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_items_photos"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:background="@color/secondaryLightColor" />
 
     </FrameLayout>
 
@@ -52,20 +54,25 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_field_description"
+        style="@style/OrangePanel"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:padding="16dp"
         android:hint="Descripción"
+        app:boxStrokeColor="@color/secondaryDarkColor"
+        app:endIconTint="@color/secondaryDarkColor"
+        app:hintTextColor="@color/secondaryDarkColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frame_layout_items_photos">
 
         <com.google.android.material.textfield.TextInputEditText
-            style="@style/OrangePanel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/secondaryLightColor"
             android:maxLines="3" />
 
     </com.google.android.material.textfield.TextInputLayout>

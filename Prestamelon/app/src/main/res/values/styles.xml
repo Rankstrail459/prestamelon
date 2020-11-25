@@ -51,16 +51,18 @@
     <style name="GreenCardView" parent="Widget.MaterialComponents.CardView">
         <item name="cardElevation">8dp</item>
         <item name="cardBackgroundColor">@color/primaryColor</item>
-        <item name="strokeColor">@color/primaryDarkColor</item>
-        <item name="strokeWidth">4dp</item>
     </style>
 
     <style name="GreenCardView.LowRadius" parent="GreenCardView">
         <item name="cardCornerRadius">20dp</item>
+        <item name="strokeColor">@color/primaryColor</item>
+        <item name="strokeWidth">8dp</item>
     </style>
 
     <style name="GreenCardView.HighRadius" parent="GreenCardView">
         <item name="cardCornerRadius">80dp</item>
+        <item name="strokeColor">@color/primaryDarkColor</item>
+        <item name="strokeWidth">4dp</item>
     </style>
 
     <style name="MensajeRegistro">
@@ -75,7 +77,7 @@
 
     <style name="OrangePanel">
     <item name="android:background">@drawable/registro_mensaje_background</item>
-    <item name="android:padding">32dp</item>
+    <!--<item name="android:padding">32dp</item>-->
     <item name="elevation">8dp</item>
     </style>
 

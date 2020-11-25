@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -108,16 +109,57 @@ public class PostNewOfferActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == REQUEST_TAKE_ITEM_PHOTO) {
-            addPhoto();
+            addItemPhoto();
         }
     }
     
-    private void addPhoto() {
+    private void addItemPhoto() {
         mItemsPhotosList.add(new NewOfferItemsPhotosAdapter.ItemPhoto(
                 BitmapUtils.getBitmapFromPhotoPath(mCurrentItemPhotoPath, 0, 0),
                 false)
         );
 
-        mRecyclerView.setAdapter(new NewOfferItemsPhotosAdapter(mItemsPhotosList));
+        setItemsPhotosListAdapter();
+    }
+
+    private void deleteItemPhoto(int position) {
+        mItemsPhotosList.remove(position);
+
+        setItemsPhotosListAdapter();
+    }
+
+    private void checkAsMainItemPhoto(int position) {
+        for (NewOfferItemsPhotosAdapter.ItemPhoto itemPhoto : mItemsPhotosList) {
+            itemPhoto.MainPhoto = false;
+        }
+
+        NewOfferItemsPhotosAdapter.ItemPhoto mainItemPhoto = mItemsPhotosList.get(position);
+
+        mItemsPhotosList.remove(position);
+
+        mainItemPhoto.MainPhoto = true;
+
+        mItemsPhotosList.add(0, mainItemPhoto);
+
+
+        setItemsPhotosListAdapter();
+    }
+
+    private void setItemsPhotosListAdapter() {
+        NewOfferItemsPhotosAdapter adapter = new NewOfferItemsPhotosAdapter(mItemsPhotosList);
+
+        adapter.setClickInterface(new NewOfferItemsPhotosAdapter.ClickInterface() {
+            @Override
+            public void itemPhotoClickEvent(int position) {
+                checkAsMainItemPhoto(position);
+            }
+
+            @Override
+            public void buttonDeletePhotoClickEvent(int position) {
+                deleteItemPhoto(position);
+            }
+        });
+
+        mRecyclerView.setAdapter(adapter);
     }
 }
